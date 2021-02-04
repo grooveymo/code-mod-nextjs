@@ -58,7 +58,7 @@ export const Todos = () => {
   };
 
   return (
-    <section>
+    <section className="w-10/12 sm:w-10/12 lg:w-1/2 max-w-2xl border rounded shadow-lg px-4 py-10 bg-white flex flex-col items-center">
       <AddTodo
         task={task}
         handleChange={handleChange}
@@ -73,9 +73,11 @@ export const Todos = () => {
         />
       ))}
       {!hasTodos ? (
-        <p>Please add a new todo!</p>
+        <p className="flex justify-center items-center text-xl mt-5 font-medium text-red-500">
+          No todos left!
+        </p>
       ) : (
-        <p>{`${remainingTodos} of ${lengthTodos} todos left`}</p>
+        <p className="flex justify-center items-center text-lg mt-3 font-medium">{`${remainingTodos} of ${lengthTodos} todos left`}</p>
       )}
     </section>
   );
